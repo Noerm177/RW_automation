@@ -13,24 +13,23 @@ namespace RW_Auto.libs.Components
     {
         private readonly DriverParams driverParams;
         private readonly ChromeOptions chOpt;
-       
 
-        public WebDriverFactory(ChromeOptions chOpt, DriverParams driverParams )
+        //Constructor
+        public WebDriverFactory(ChromeOptions chOpt, DriverParams driverParams)
         {
             this.chOpt = chOpt;
-
             this.driverParams = driverParams;
-            if (string.IsNullOrEmpty(driverParams.Binaries)|| driverParams.Binaries == ".")
+            if (string.IsNullOrEmpty(driverParams.Binaries) || driverParams.Binaries == ".")
             {
                 driverParams.Binaries = Environment.CurrentDirectory;
             }
-         
+
         }
-         /*public WebDriverFactory(string driverParamsJson) 
-            :this(LoadParams(driverParamsJson)){ }*/
+        /*public WebDriverFactory(string driverParamsJson) 
+           :this(LoadParams(driverParamsJson)){ }*/
 
         //Local web drivers
-        private IWebDriver GetChrome() => new ChromeDriver(driverParams.Binaries ,chOpt );
+        private IWebDriver GetChrome() => new ChromeDriver(driverParams.Binaries, chOpt); // Send parameters
         private IWebDriver GetFirefox() => new FirefoxDriver(driverParams.Binaries);
         private IWebDriver GetInternetExplorer() => new InternetExplorerDriver(driverParams.Binaries);
 
@@ -38,9 +37,9 @@ namespace RW_Auto.libs.Components
         {
             switch (driverParams.Driver.ToUpper())
             {
-                case "IE" : return GetInternetExplorer();
-                case "CHROME" : return GetChrome();
-                case "FF" : return GetFirefox();
+                case "IE": return GetInternetExplorer();
+                case "CHROME": return GetChrome();
+                case "FF": return GetFirefox();
                 default: return GetChrome();
             }
         }
@@ -49,7 +48,7 @@ namespace RW_Auto.libs.Components
         {
             if (string.IsNullOrEmpty(driverParamsJson))
             {
-                return new DriverParams {Source = "Local", Driver = "Chrome", Binaries = "."};
+                return new DriverParams { Source = "Local", Driver = "Chrome", Binaries = "." };
             }
             return JsonConvert.DeserializeObject<DriverParams>(driverParamsJson);
         }

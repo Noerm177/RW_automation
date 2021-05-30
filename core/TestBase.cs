@@ -15,7 +15,7 @@ namespace RW_Auto.core.TestBase
 
         [SetUp]
         public void startBrowser()
-        {
+        {   // Optiones for chrome browser
             chromeOpt = new ChromeOptions();
             chromeOpt.AcceptInsecureCertificates = true;
             chromeOpt.AddArgument("safebrowsing_for_trusted_sources_enabled");
@@ -23,14 +23,13 @@ namespace RW_Auto.core.TestBase
             chromeOpt.AddArgument("ignore-certificate-errors");
             chromeOpt.AddArgument("disable-popup-blocking");
             chromeOpt.AddArgument("proxy-bypass-list");
-
+        // Set values for driver
             this.driver = new WebDriverFactory(chromeOpt, new DriverParams
             { Driver = "Chrome", Binaries = @"C:\Users\Noe.ruvalcaba\Documents\retailer wizard\automation\RW_Auto\drivers", })
                 .GetDriver();
 
             driver.Navigate().GoToUrl(test_url);
             driver.Manage().Window.Maximize();
-
         }
 
         [TearDown]
