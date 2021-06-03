@@ -4,12 +4,14 @@ using OpenQA.Selenium;
 using RW_Auto.libs.Components;
 using RW_Auto.Contracts;
 using OpenQA.Selenium.Chrome;
+using System.Threading;
+
 
 namespace RW_Auto.core.TestBase
 {
     public class TestBase
     {
-        String test_url = "https://rwqa3.gtk.gtech.com/RetailerWizard/#!/home";
+        String test_url = "https://rwqa1.gtk.gtech.com/RetailerWizard/#/home";
         public IWebDriver driver = null;
         public ChromeOptions chromeOpt = null;
 
@@ -23,6 +25,7 @@ namespace RW_Auto.core.TestBase
             chromeOpt.AddArgument("ignore-certificate-errors");
             chromeOpt.AddArgument("disable-popup-blocking");
             chromeOpt.AddArgument("proxy-bypass-list");
+            chromeOpt.PageLoadStrategy = PageLoadStrategy.Normal;
         // Set values for driver
             this.driver = new WebDriverFactory(chromeOpt, new DriverParams
             { Driver = "Chrome", Binaries = @"C:\Users\Noe.ruvalcaba\Documents\retailer wizard\automation\RW_Auto\drivers", })
@@ -30,6 +33,7 @@ namespace RW_Auto.core.TestBase
 
             driver.Navigate().GoToUrl(test_url);
             driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
         }
 
         [TearDown]
