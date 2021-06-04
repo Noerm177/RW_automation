@@ -11,7 +11,6 @@ namespace RW_Auto.core.TestBase
 {
     public class TestBase
     {
-        String test_url = "https://rwqa1.gtk.gtech.com/RetailerWizard/#/home";
         public IWebDriver driver = null;
         public ChromeOptions chromeOpt = null;
 
@@ -19,19 +18,12 @@ namespace RW_Auto.core.TestBase
         public void startBrowser()
         {   // Optiones for chrome browser
             chromeOpt = new ChromeOptions();
-            chromeOpt.AcceptInsecureCertificates = true;
-            chromeOpt.AddArgument("safebrowsing_for_trusted_sources_enabled");
-            chromeOpt.AddArgument("trusted-download-sources");
-            chromeOpt.AddArgument("ignore-certificate-errors");
-            chromeOpt.AddArgument("disable-popup-blocking");
-            chromeOpt.AddArgument("proxy-bypass-list");
-            chromeOpt.PageLoadStrategy = PageLoadStrategy.Normal;
-        // Set values for driver
+
+            // Set values for driver
             this.driver = new WebDriverFactory(chromeOpt, new DriverParams
             { Driver = "Chrome", Binaries = @"C:\Users\Noe.ruvalcaba\Documents\retailer wizard\automation\RW_Auto\drivers", })
                 .GetDriver();
-
-            driver.Navigate().GoToUrl(test_url);
+            driver.Url = "https://rwqa1.gtk.gtech.com/RetailerWizard/#/home";
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
         }

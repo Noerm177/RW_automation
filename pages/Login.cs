@@ -45,6 +45,7 @@ namespace RW_Auto.pages
 
             var  wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TextToBePresentInElement(actualTitle, managaUserText));
+
             String title = actualTitle.GetAttribute("innerText");
 
             if (title == managaUserText)
@@ -55,9 +56,6 @@ namespace RW_Auto.pages
             {
                 Console.WriteLine("Wrong Page Title is: " + title);
             }
-
-
-
         }
     }
 }

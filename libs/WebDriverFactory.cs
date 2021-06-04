@@ -18,6 +18,14 @@ namespace RW_Auto.libs.Components
         public WebDriverFactory(ChromeOptions chOpt, DriverParams driverParams)
         {
             this.chOpt = chOpt;
+            chOpt.AcceptInsecureCertificates = true;
+            chOpt.AddArgument("safebrowsing_for_trusted_sources_enabled");
+            chOpt.AddArgument("trusted-download-sources");
+            chOpt.AddArgument("ignore-certificate-errors");
+            chOpt.AddArgument("disable-popup-blocking");
+            chOpt.AddArgument("proxy-bypass-list");
+            chOpt.PageLoadStrategy = PageLoadStrategy.Normal;
+
             this.driverParams = driverParams;
             if (string.IsNullOrEmpty(driverParams.Binaries) || driverParams.Binaries == ".")
             {
