@@ -17,9 +17,12 @@ namespace RW_Auto.tests
         [Test]
         public void LoginTest()
         {
+            Manage_Content rolesRetailer = new Manage_Content(driver);
             Login LoginPAge = new Login(driver);
             LoginPAge.logIn(emailTxt, passTxt);
             LoginPAge.getTitle();
+            rolesRetailer.getTitle();
         }
+
     }
 }

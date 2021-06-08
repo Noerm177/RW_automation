@@ -21,7 +21,7 @@ namespace RW_Auto.core.TestBase
 
             // Set values for driver
             this.driver = new WebDriverFactory(chromeOpt, new DriverParams
-            { Driver = "Chrome", Binaries = @"C:\Users\Noe.ruvalcaba\Documents\retailer wizard\automation\RW_Auto\drivers", })
+            { Driver = "Chrome", Binaries = @"C:\Users\Administrador\source\repos\RW_automation\drivers", })
                 .GetDriver();
             driver.Url = "https://rwqa1.gtk.gtech.com/RetailerWizard/#/home";
             driver.Manage().Window.Maximize();

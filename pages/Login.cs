@@ -50,11 +50,11 @@ namespace RW_Auto.pages
 
             if (title == managaUserText)
             {
-                Console.WriteLine("Correct title is: " + title);
+                Console.WriteLine("\nCorrect title is: " + title);
             }
             else
             {
-                Console.WriteLine("Wrong Page Title is: " + title);
+                Console.WriteLine("\nWrong Page Title is: " + title);
             }
         }
     }

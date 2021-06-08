@@ -5334,24 +5334,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Noe.ruvalcaba\\.nuget\\packages\\": {}
+    "C:\\Users\\Administrador\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Noe.ruvalcaba\\Documents\\retailer wizard\\automation\\RW_Auto\\RW_Auto.csproj",
+      "projectUniqueName": "C:\\Users\\Administrador\\source\\repos\\RW_automation\\RW_Auto.csproj",
       "projectName": "RW_Auto",
-      "projectPath": "c:\\Users\\Noe.ruvalcaba\\Documents\\retailer wizard\\automation\\RW_Auto\\RW_Auto.csproj",
-      "packagesPath": "C:\\Users\\Noe.ruvalcaba\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Noe.ruvalcaba\\Documents\\retailer wizard\\automation\\RW_Auto\\obj\\",
+      "projectPath": "C:\\Users\\Administrador\\source\\repos\\RW_automation\\RW_Auto.csproj",
+      "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrador\\source\\repos\\RW_automation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Noe.ruvalcaba\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5420,7 +5423,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
